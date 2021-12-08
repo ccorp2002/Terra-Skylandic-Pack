@@ -1,0 +1,14 @@
+id: OCEAN_FLORA
+extends: BASIC_ORES
+abstract: true
+ocean:
+  palette: BLOCK:minecraft:air
+ocean:
+  palette: BLOCK:minecraft:air
+palette:
+  - "BLOCK:minecraft:air": 0
+  - DEEPSLATE: 75
+  - SANDY: 360
+  - OCEANFLOOR: 60
+
+noise-equation: "terrainBase"

@@ -1,0 +1,36 @@
+extends: "FOREST_ABSTRACT"
+id: "DARK_FOREST"
+
+noise-equation: |
+  max(
+    -|-y + floatingIslandBase| / if(y > floatingIslandBase, floatingIslandTopHeight, floatingIslandBottomHeight)
+    + noise2(x,z),
+    -y + terrainBase
+    + (noise2(x,z)+1)/2 * terrainHeight
+  )
+color: 0x40511a
+ocean:
+  palette: BLOCK:minecraft:air
+palette:
+  - "BLOCK:minecraft:air": 0
+  - DEEPSLATE: 75
+  - SANDY: 62
+  - GRASSY: 360
+vanilla: DARK_FOREST
+
+trees:
+  - density: 0.75
+    items:
+      - DRIPSTONE: 9
+    y:
+      min: 20
+      max: 50
+  - density: 15
+    items:
+      - DARK_OAK: 1
+    y:
+      min: 58
+      max: 270
+tags:
+  - "LAND"
+  - "RIVER_ERODE"

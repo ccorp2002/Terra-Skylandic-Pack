@@ -1,0 +1,19 @@
+
+noise-equation: |
+  max(
+    -|-y + floatingIslandBase| / if(y > floatingIslandBase, floatingIslandTopHeight, floatingIslandBottomHeight)
+    + noise2(x,z),
+    -y + terrainBase
+    + (noise2(x,z)+1)/2 * terrainHeight
+  )
+id: "PLAINS_ABSTRACT"
+abstract: true
+extends: BASIC_ORES
+erode: RIVER
+structures:
+  - DUNGEON
+  - DUNGEON
+  - RUINED_PORTAL
+noise-2d:
+  enable: true
+  base: 64

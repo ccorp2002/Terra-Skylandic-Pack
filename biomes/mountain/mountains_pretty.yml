@@ -1,0 +1,23 @@
+extends: "MOUNTAINS_PRETTY_A"
+id: "MOUNTAINS_PRETTY"
+erode: RIVER_M_P
+
+noise-equation: |
+  max(
+    -|-y + floatingIslandBase| / if(y > floatingIslandBase, floatingIslandTopHeight, floatingIslandBottomHeight)
+    + noise2(x,z),
+    -y + terrainBase
+    + (noise2(x,z)+1)/2 * terrainHeight
+  )
+color: 0x507050
+ocean:
+  palette: BLOCK:minecraft:air
+palette:
+  - "BLOCK:minecraft:air": 0
+  - DEEPSLATE: 75
+  - RIVER_BOTTOM: 61
+  - RIVER_SHORE: 62
+  - MOUNTAIN_PRETTY: 360
+vanilla: PLAINS
+tags:
+  - "LAND"

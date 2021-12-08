@@ -1,0 +1,22 @@
+extends: "DEEP_OCEAN_ABSTRACT"
+id: "COLD_OCEAN_DEEP"
+vanilla: COLD_OCEAN
+
+noise-equation: "terrainBase"
+blend:
+  distance: 1
+  weight: 1.25
+elevation:
+  equation: "-0.025"
+  weight: 8
+color: 0x202038
+ocean:
+  palette: BLOCK:minecraft:air
+palette:
+  - "BLOCK:minecraft:air": 0
+  - DEEPSLATE: 75
+  - TUNDRA: 360
+  - OCEANFLOOR: 60
+tags:
+  - "OCEAN"
+  - "OCEAN_DEEP"

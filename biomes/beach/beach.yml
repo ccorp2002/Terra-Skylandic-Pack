@@ -1,0 +1,12 @@
+extends: "BEACH_ABSTRACT"
+id: "BEACH"
+vanilla: BEACH
+
+noise-equation: |
+  max(
+    -|-y + floatingIslandBase| / if(y > floatingIslandBase, floatingIslandTopHeight, floatingIslandBottomHeight)
+    + noise2(x,z),
+    -y + terrainBase
+    + (noise2(x,z)+1)/2 * terrainHeight
+  )
+color: 0xfade55

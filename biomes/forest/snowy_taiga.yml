@@ -1,0 +1,63 @@
+extends: "FOREST_ABSTRACT"
+id: "SNOWY_TAIGA"
+
+noise-equation: |
+  max(
+    -|-y + floatingIslandBase| / if(y > floatingIslandBase, floatingIslandTopHeight, floatingIslandBottomHeight)
+    + noise2(x,z),
+    -y + terrainBase
+    + (noise2(x,z)+1)/2 * terrainHeight
+  )
+color: 0x31554a
+structures:
+  - IGLOO
+  - DUNGEON
+  - DUNGEON
+ocean:
+  palette: BLOCK:minecraft:air
+palette:
+  - "BLOCK:minecraft:air": 0
+  - DEEPSLATE: 75
+  - RIVER_BOTTOM: 61
+  - RIVER_SHORE: 62
+  - TAIGA: 360
+vanilla: SNOWY_TAIGA
+tags:
+  - "LAND"
+  - "COLD"
+  - "RIVER_ERODE"
+  - "FROZEN"
+flora:
+  - density: 1
+    y:
+      min: 10
+      max: 56
+    items:
+      - GLOW_LICHEN: 1
+  - density: 80
+    y:
+      min: 62
+      max: 156
+    items:
+      - SNOW: 1
+  - density: 40
+    y:
+      min: 62
+      max: 270
+    items:
+      - TALL_GRASS: 15
+      - GRASS: 70
+      - SWEET_BERRIES: 1
+trees:
+  - density: 0.75
+    items:
+      - DRIPSTONE: 9
+    y:
+      min: 20
+      max: 50
+  - density: 6
+    items:
+      - SPRUCE: 1
+    y:
+      min: 58
+      max: 270

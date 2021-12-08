@@ -1,0 +1,17 @@
+extends: "OCEAN_ABSTRACT"
+id: "OCEAN"
+vanilla: OCEAN
+
+
+noise-equation: "terrainBase"
+blend:
+  distance: 1
+  weight: 1.25
+elevation:
+  equation: "-0.025"
+  weight: 8
+color: 0x000070
+tags:
+  - "OCEAN"
+ocean:
+  palette: BLOCK:minecraft:air

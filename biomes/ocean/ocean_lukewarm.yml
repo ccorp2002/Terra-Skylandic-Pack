@@ -1,0 +1,35 @@
+extends: "OCEAN_ABSTRACT"
+id: "LUKEWARM_OCEAN"
+vanilla: LUKEWARM_OCEAN
+
+
+noise-equation: "terrainBase"
+blend:
+  distance: 1
+  weight: 1.25
+elevation:
+  equation: "-0.025"
+  weight: 8
+color: 0x000090
+ocean:
+  palette: BLOCK:minecraft:air
+palette:
+  - "BLOCK:minecraft:air": 0
+  - DEEPSLATE: 75
+  - SANDY: 360
+  - OCEANFLOOR: 60
+flora:
+  - density: 50
+    y:
+      min: 30
+      max: 120
+    simplex-frequency: 0.05
+    items:
+      - TALL_SEAGRASS: 1
+      - SEAGRASS: 3
+      - KELP_SHORT: 5
+      - KELP_MEDIUM: 5
+      - KELP_TALL: 5
+tags:
+  - "OCEAN"
+  - "WARM_OCEAN"

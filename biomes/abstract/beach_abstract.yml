@@ -1,0 +1,24 @@
+
+noise-equation: |
+  max(
+    -|-y + floatingIslandBase| / if(y > floatingIslandBase, floatingIslandTopHeight, floatingIslandBottomHeight)
+    + noise2(x,z),
+    -y + terrainBase
+    + (noise2(x,z)+1)/2 * terrainHeight
+  )
+color: 0xfade55
+id: "BEACH_ABSTRACT"
+tags:
+  - "RIVER_ERODE"
+  - "BEACH"
+abstract: true
+extends: BASIC_ORES
+carving: {}
+ocean:
+  palette: BLOCK:minecraft:air
+palette:
+  - "BLOCK:minecraft:air": 0
+  - DEEPSLATE: 75
+  - SANDY: 64
+  - GRASSY: 360
+erode: RIVER

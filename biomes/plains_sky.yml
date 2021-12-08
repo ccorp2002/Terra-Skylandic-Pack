@@ -1,0 +1,71 @@
+extends: "PLAINS_ABSTRACT"
+id: "SKY_ISLANDS"
+
+noise-equation: |
+  max(
+    -|-y + floatingIslandBase| / if(y > floatingIslandBase, floatingIslandTopHeight, floatingIslandBottomHeight)
+    + noise2(x,z),
+    -y + terrainBase
+    + (noise2(x,z)+1)/2 * terrainHeight
+  )
+color: 0xff0000
+
+noise-equation: |
+  max(
+    
+    -|-z + floatingIslandBase| / if(z > floatingIslandBase, floatingIslandTopHeight, floatingIslandBottomHeight)
+    + noise2(x,x)
+    ,
+    
+    -z + terrainBase
+    + (noise2(x,x)+1)/2 * terrainHeight
+  )
+ocean:
+  palette: BLOCK:minecraft:air
+palette:
+  - "BLOCK:minecraft:air": 0
+  - DEEPSLATE: 75
+  - RIVER_BOTTOM: 61
+  - RIVER_SHORE: 62
+  - GRASSY: 360
+vanilla: PLAINS
+
+tags:
+  - "LAND"
+flora:
+  - density: 1
+    y:
+      min: 10
+      max: 56
+    items:
+      - GLOW_LICHEN: 1
+  - density: 50
+    y:
+      min: 0
+      max: 360
+    items:
+      - TALL_GRASS: 150
+      - GRASS: 700
+      - DANDELION: 1
+      - OXEYE_DAISY: 1
+      - CORNFLOWER: 1
+      - AZURE_BLUET: 1
+      - RED_TULIP: 1
+      - ORANGE_TULIP: 1
+      - WHITE_TULIP: 1
+      - PINK_TULIP: 1
+trees:
+  - density: 0.75
+    items:
+      - DRIPSTONE: 9
+    y:
+      min: 20
+      max: 50
+  - density: 0.02
+    items:
+      - PUMPKIN_PATCH: 1
+    y:
+      min: 58
+      max: 270
+
+# Carving and ores covered by super biome

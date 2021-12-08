@@ -1,0 +1,9 @@
+
+
+noise-equation: "terrainBase"
+id: "OCEAN_ABSTRACT"
+abstract: true
+extends: OCEAN_FLORA
+trees: []
+ocean:
+  palette: BLOCK:minecraft:air

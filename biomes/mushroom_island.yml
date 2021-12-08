@@ -1,0 +1,57 @@
+extends: "PLAINS_ABSTRACT"
+id: "MUSHROOM"
+
+noise-equation: |
+  max(
+    -|-y + floatingIslandBase| / if(y > floatingIslandBase, floatingIslandTopHeight, floatingIslandBottomHeight)
+    + noise2(x,z),
+    -y + terrainBase
+    + (noise2(x,z)+1)/2 * terrainHeight
+  )
+color: 0xff00ff
+ocean:
+  palette: BLOCK:minecraft:air
+palette:
+  - "BLOCK:minecraft:air": 0
+  - DEEPSLATE: 75
+  - RIVER_BOTTOM: 61
+  - MYCELIUM_SHORE: 62
+  - MYCELIUM: 360
+biome-noise:
+  type: OpenSimplex2
+  frequency: 0.01
+tags:
+  - "LAND_MUSHROOM"
+vanilla: MUSHROOM_FIELDS
+trees:
+  - density: 0.75
+    items:
+      - DRIPSTONE: 9
+    y:
+      min: 20
+      max: 50
+  - density: 3
+    items:
+      - RED_MUSHROOM: 1
+      - BROWN_MUSHROOM: 1
+    y:
+      min: 62
+      max: 270
+
+flora:
+  - density: 1
+    y:
+      min: 10
+      max: 56
+    items:
+      - GLOW_LICHEN: 1
+  - density: 4
+    y:
+      min: 62
+      max: 270
+    items:
+      - RED_MUSHROOM: 1
+      - BROWN_MUSHROOM: 2
+
+
+# Carving and ores covered by super biome

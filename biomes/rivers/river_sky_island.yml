@@ -1,0 +1,73 @@
+
+
+noise-equation: |
+  max(
+    -|-y + floatingIslandBase| / if(y > floatingIslandBase, floatingIslandTopHeight, floatingIslandBottomHeight)
+    + noise2(x,z),
+    -y + terrainBase
+    + (noise2(x,z)+1)/2 * terrainHeight
+  )
+#noise-equation: "if(max(y-96, 0), -(if(max(y-150, 0), |y-150|, |y-150|/16)) - 0.25 + (noise2(x*3, z*3)*3), ((-((y / base)^2)) + 1) + ((noise2(x, z)/4)))"
+
+extends: "BASIC_ORES"
+carving: {}
+id: "RIVER_SKY_ISLANDS"
+
+noise-equation: |
+  max(
+    -|-y + floatingIslandBase| / if(y > floatingIslandBase, floatingIslandTopHeight, floatingIslandBottomHeight)
+    + noise2(x,z),
+    -y + terrainBase
+    + (noise2(x,z)+1)/2 * terrainHeight
+  )
+color: 0x0000ff
+blend:
+  distance: 1
+  weight: 1.25
+#elevation:
+  #equation: "-0.025"
+  weight: 8
+ocean:
+  palette: BLOCK:minecraft:air
+palette:
+  - "BLOCK:minecraft:air": 0
+  - DEEPSLATE: 75
+  - RIVER_BOTTOM: 61
+  - RIVER_SHORE: 62
+  - GRASSY: 360
+vanilla: RIVER
+flora:
+  - density: 1
+    y:
+      min: 10
+      max: 56
+    items:
+      - GLOW_LICHEN: 1
+  - density: 60
+    y:
+      min: 61
+      max: 80
+    items:
+      - SUGARCANE: 25
+      - GRASS: 675
+      - LILY_PAD: 10
+      - TALL_GRASS: 150
+  - density: 30
+    items:
+      - SEAGRASS: 50
+      - TALL_SEAGRASS: 20
+    y:
+      min: 50
+      max: 63
+  - density: 50
+    y:
+      min: 120
+      max: 170
+    items:
+      - TALL_GRASS: 150
+      - GRASS: 700
+      - SUNFLOWER: 20
+ocean:
+  palette: "BLOCK:minecraft:air"
+  level: 1
+weight: 200

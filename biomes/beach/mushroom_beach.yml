@@ -1,0 +1,20 @@
+extends: "BEACH_ABSTRACT"
+id: "MUSHROOM_BEACH"
+vanilla: MUSHROOM_FIELD_SHORE
+
+noise-equation: |
+  max(
+    -|-y + floatingIslandBase| / if(y > floatingIslandBase, floatingIslandTopHeight, floatingIslandBottomHeight)
+    + noise2(x,z),
+    -y + terrainBase
+    + (noise2(x,z)+1)/2 * terrainHeight
+  )
+color: 0xa000ff
+ocean:
+  palette: BLOCK:minecraft:air
+palette:
+  - "BLOCK:minecraft:air": 0
+  - DEEPSLATE: 75
+  - SANDY: 62
+  - MYCELIUM_SHORE: 64
+  - MYCELIUM: 360

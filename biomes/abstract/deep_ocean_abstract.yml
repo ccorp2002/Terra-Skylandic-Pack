@@ -1,0 +1,11 @@
+
+
+noise-equation: "terrainBase"
+variables:
+  base: 36
+structures:
+  - MONUMENT
+  - DUNGEON
+id: "DEEP_OCEAN_ABSTRACT"
+extends: OCEAN_FLORA
+abstract: true
