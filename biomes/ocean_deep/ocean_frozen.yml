@@ -1,7 +1,13 @@
 extends: "DEEP_OCEAN_ABSTRACT"
 id: "FROZEN_OCEAN_DEEP"
 vanilla: FROZEN_OCEAN
+variables:
+  terrainBase: 0
+  terrainHeight: 0
 
+  floatingIslandBase: 100
+  floatingIslandTopHeight: 25
+  floatingIslandBottomHeight: 75
 noise-equation: "terrainBase"
 blend:
   distance: 1

@@ -1,5 +1,11 @@
 
+variables:
+  terrainBase: 0
+  terrainHeight: 0
 
+  floatingIslandBase: 100
+  floatingIslandTopHeight: 25
+  floatingIslandBottomHeight: 75
 noise-equation: |
   max(
     -|-y + floatingIslandBase| / if(y > floatingIslandBase, floatingIslandTopHeight, floatingIslandBottomHeight)
@@ -10,7 +16,13 @@ noise-equation: |
 #noise-equation: "((-((y / base)^2)) + 1) + ((noise2(x, z)/4))"
 extends: "BASIC_ORES"
 id: "SWAMP"
+variables:
+  terrainBase: 0
+  terrainHeight: 0
 
+  floatingIslandBase: 100
+  floatingIslandTopHeight: 25
+  floatingIslandBottomHeight: 75
 noise-equation: |
   max(
     -|-y + floatingIslandBase| / if(y > floatingIslandBase, floatingIslandTopHeight, floatingIslandBottomHeight)

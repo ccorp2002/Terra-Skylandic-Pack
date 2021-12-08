@@ -1,7 +1,13 @@
 extends: "BEACH_ABSTRACT"
 id: "MUSHROOM_BEACH"
 vanilla: MUSHROOM_FIELD_SHORE
+variables:
+  terrainBase: 0
+  terrainHeight: 0
 
+  floatingIslandBase: 100
+  floatingIslandTopHeight: 25
+  floatingIslandBottomHeight: 75
 noise-equation: |
   max(
     -|-y + floatingIslandBase| / if(y > floatingIslandBase, floatingIslandTopHeight, floatingIslandBottomHeight)

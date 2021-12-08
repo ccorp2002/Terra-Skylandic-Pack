@@ -1,6 +1,12 @@
 extends: "PLAINS_ABSTRACT"
 id: "SKY_ISLANDS"
+variables:
+  terrainBase: 0
+  terrainHeight: 0
 
+  floatingIslandBase: 100
+  floatingIslandTopHeight: 25
+  floatingIslandBottomHeight: 75
 noise-equation: |
   max(
     -|-y + floatingIslandBase| / if(y > floatingIslandBase, floatingIslandTopHeight, floatingIslandBottomHeight)
@@ -9,7 +15,13 @@ noise-equation: |
     + (noise2(x,z)+1)/2 * terrainHeight
   )
 color: 0xff0000
+variables:
+  terrainBase: 0
+  terrainHeight: 0
 
+  floatingIslandBase: 100
+  floatingIslandTopHeight: 25
+  floatingIslandBottomHeight: 75
 noise-equation: |
   max(
     

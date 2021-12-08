@@ -1,6 +1,12 @@
 id: YELLOWSTONE
 extends: PLAINS_ABSTRACT
+variables:
+  terrainBase: 0
+  terrainHeight: 0
 
+  floatingIslandBase: 100
+  floatingIslandTopHeight: 25
+  floatingIslandBottomHeight: 75
 noise-equation: |
   max(
     -|-y + floatingIslandBase| / if(y > floatingIslandBase, floatingIslandTopHeight, floatingIslandBottomHeight)
@@ -27,7 +33,13 @@ palette:
   - "BLOCK:minecraft:calcite": 63
 vanilla: MOUNTAINS
 
+variables:
+  terrainBase: 0
+  terrainHeight: 0
 
+  floatingIslandBase: 100
+  floatingIslandTopHeight: 25
+  floatingIslandBottomHeight: 75
 noise-equation: |
   max(
     -|-y + floatingIslandBase| / if(y > floatingIslandBase, floatingIslandTopHeight, floatingIslandBottomHeight)

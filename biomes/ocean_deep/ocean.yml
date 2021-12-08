@@ -4,7 +4,13 @@ vanilla: OCEAN
 tags:
   - "OCEAN"
   - "OCEAN_DEEP"
+variables:
+  terrainBase: 0
+  terrainHeight: 0
 
+  floatingIslandBase: 100
+  floatingIslandTopHeight: 25
+  floatingIslandBottomHeight: 75
 noise-equation: "terrainBase"
 blend:
   distance: 1

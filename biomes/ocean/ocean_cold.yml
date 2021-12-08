@@ -1,7 +1,13 @@
 extends: "OCEAN_ABSTRACT"
 id: "COLD_OCEAN"
 vanilla: COLD_OCEAN
+variables:
+  terrainBase: 0
+  terrainHeight: 0
 
+  floatingIslandBase: 100
+  floatingIslandTopHeight: 25
+  floatingIslandBottomHeight: 75
 noise-equation: "terrainBase"
 blend:
   distance: 1
